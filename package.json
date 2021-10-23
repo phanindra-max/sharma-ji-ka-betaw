@@ -1,0 +1,22 @@
+{
+  "name": "sharma-ji-ka-betaw",
+  "version": "1.0.0",
+  "description": "Goal Planner and organizer to give you the super powers of Sharma Ji Ka Betaaw 🏋️‍♂️",
+  "main": "server/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon server/index.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phanindra-max/sharma-ji-ka-betaw.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/phanindra-max/sharma-ji-ka-betaw/issues"
+  },
+  "homepage": "https://github.com/phanindra-max/sharma-ji-ka-betaw#readme"
+}
