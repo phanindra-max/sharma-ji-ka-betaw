@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.css"],"names":[],"mappings":"AAAA,KACE,wBACF,CAEA,EAEE,oBACF","file":"main.97645ef4.chunk.css","sourcesContent":["body {\n  background-color: #f7f8fc;\n}\n\n* {\n  /* font-family: 'Noto Sans JP' !important; */\n  font-family: \"Roboto\";\n}\n"]}
