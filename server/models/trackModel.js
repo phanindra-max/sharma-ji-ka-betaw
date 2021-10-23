@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose from "mongoose"
 
 const trackSchema = mongoose.Schema(
   {
@@ -27,6 +27,6 @@ const trackSchema = mongoose.Schema(
   {
     timestamps: true,
   }
-);
+)
 
-export default mongoose.model("Track", trackSchema);
+export default mongoose.model("Track", trackSchema)
