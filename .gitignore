@@ -106,3 +106,4 @@ dist
 
 #remove build in frontend from git watch
 /client/build
+/client/package-lock.json
