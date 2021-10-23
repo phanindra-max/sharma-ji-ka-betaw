@@ -5,9 +5,10 @@
     overflow: auto;
     flex-direction: column;
     height: 90vh;
-    border:2px solid #333;
+    border:2px solid rgb(175, 174, 174);
     /* padding: 0 1rem 0 0; */
     margin:0 0 0 1rem;
+    border-radius: 11px;
 }
 
 .topic {
@@ -118,7 +119,7 @@ button.btn_add {
 
 ::-webkit-scrollbar-thumb {
     background: linear-gradient(45deg, rgb(5, 170, 5), red);
-    border-radius: 11px;
+    border-radius: 10px;
 }
 
 
