@@ -5,6 +5,8 @@ import cors from "cors";
 
 import postRoutes from "./routes/posts.js";
 import userRouter from "./routes/user.js";
+import trackRouter from "./routes/trackRoutes.js";
+import topicRouter from "./routes/topicsRoutes.js";
 
 const app = express();
 
@@ -14,6 +16,8 @@ app.use(cors());
 
 app.use("/posts", postRoutes);
 app.use("/user", userRouter);
+app.use("/track", trackRouter);
+app.use("/topic", topicRouter);
 
 const CONNECTION_URL =
   "mongodb+srv://nashagri:y5tBsyg783gPa0e5@cluster0.jlnit.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
