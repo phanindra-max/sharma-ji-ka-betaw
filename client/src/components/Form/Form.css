@@ -1,0 +1,17 @@
+.btn_create_new_track{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    border-color: transparent;
+    border-radius: 50%;
+    width: 4rem;
+    height: 4rem;
+    margin: 1rem;
+    box-shadow: 1px 0px 5px black;
+    background: white;
+
+}
+.form_creation_img{
+    width: auto;
+    height: 2rem;
+}

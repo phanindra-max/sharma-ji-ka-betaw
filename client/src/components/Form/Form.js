@@ -8,6 +8,8 @@ import ChipInput from "material-ui-chip-input";
 import { createPost, updatePost } from "../../actions/posts";
 import useStyles from "./styles";
 import { Link } from "react-router-dom";
+import "./Form.css";
+import formCreationImg from "./formCreationImg.svg";
 
 const Form = ({ currentId, setCurrentId }) => {
   const [postData, setPostData] = useState({
@@ -84,13 +86,16 @@ const Form = ({ currentId, setCurrentId }) => {
         <Typography variant="h6">
           {currentId ? `Editing "${post?.title}"` : "Creating a Track"}
         </Typography>
-        <Link to="/form">
-          <button>
-            <div className="btn_text">Create</div>
-          </button>
-        </Link>
+
+        <button className="btn_create_new_track">
+          <Link to="/form">
+            <img className="form_creation_img" src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjI0cHgiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iMjRweCIgeD0iMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeT0iMCI+PGc+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMTAgMTB2NC4wMDFoMTRWMTB6IiBmaWxsPSIjNDI4NUY0Ii8+PHBhdGggZD0iTTEwIDEwSDB2NC4wMDFoMTBMMTQuMDAxIDEweiIgZmlsbD0iI0ZCQkMwNSIvPjxwYXRoIGQ9Ik0xMCAxNGg0djEwaC00eiIgZmlsbD0iIzM0QTg1MyIvPjxwYXRoIGQ9Ik0xMCAwdjE0bDQuMDAxLTRWMHoiIGZpbGw9IiNFQTQzMzUiLz48L2c+PC9nPjwvc3ZnPg==" alt="" />
+          </Link>
+        </button>
       </form>
     </Paper>
+
+    
   );
 };
 
