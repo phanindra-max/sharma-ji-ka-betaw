@@ -3,7 +3,7 @@ import Topic from "../models/topicModel.js";
 
 export const postTrack = async (req, res) => {
   const user = req.userId;
-  // console.log("Check here ----------->", req.userId);
+  console.log("Check here ----------->", req.userId);
   const { trackName, startDate, estimatedCompletionDate, description } =
     req.body;
 
