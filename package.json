@@ -5,7 +5,10 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon index.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon server/index.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "",
   "license": "ISC",
