@@ -59,7 +59,21 @@
     font-size: 3rem;
     font-weight: bolder;
 }
+.info_container{
+    position: relative;
+}
 
+button.btn_add {
+    position: absolute;
+    top: 0;
+    right: 0;
+    /* border: 1px solid yellow; */
+    padding: 4px 28px;
+    background: white;
+    border-color: transparent;
+    box-shadow: 0px 1px 2px rgb(0 0 0 / 30%);
+    color: green;
+}
 
 /* width */
 

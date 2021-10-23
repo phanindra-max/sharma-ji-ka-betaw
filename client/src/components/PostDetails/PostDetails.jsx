@@ -13,6 +13,7 @@ import { getPost, getPostsBySearch } from "../../actions/posts";
 import CommentSection from "./CommentSection";
 import useStyles from "./styles";
 import "./PostDetails.css";
+import { useState } from "react";
 
 const Post = () => {
   const { post, posts, isLoading } = useSelector((state) => state.posts);
@@ -20,6 +21,10 @@ const Post = () => {
   const history = useHistory();
   const classes = useStyles();
   const { id } = useParams();
+
+  const [name, setName] = useState("");
+  const [subtopic, setSubtopic] = useState([]);
+  let adder;
 
   useEffect(() => {
     dispatch(getPost(id));
@@ -49,44 +54,251 @@ const Post = () => {
 
   return (
     <Paper style={{ padding: "20px", borderRadius: "15px" }} elevation={6}>
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">
+                Modal title
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">
+                    Topic Name
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    // id="exampleInputEmail1"
+                    aria-describedby="emailHelp"
+                    value={name}
+                    onChange={(e)=>{setName(e.target.value)}}
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">
+                    Add sub Topic
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    // id="exampleInputPassword1"
+                    value={adder}
+                    onChange={(e)=>{setSubtopic(subtopic.push(adder))}}
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">
+                    Add sub Topic
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    // id="exampleInputPassword1"
+                    value={adder}
+                    onChange={(e)=>{setSubtopic(subtopic.push(adder))}}
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">
+                    Add sub Topic
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    // id="exampleInputPassword1"
+                    value={adder}
+                    onChange={(e)=>{setSubtopic(subtopic.push(adder))}}
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">
+                    Add sub Topic
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    // id="exampleInputPassword1"
+                    value={adder}
+                    onChange={(e)=>{setSubtopic(subtopic.push(adder))}}
+                  />
+                </div>
+                <button type="submit" class="btn btn-primary" onClick={()=>console.log(subtopic,name)}>
+                  Submit
+                </button>
+              </form>
+            </div>
+            <div class="modal-footer">
+              {/* <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="button" class="btn btn-primary">
+                Save changes
+              </button> */}
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className={classes.card}>
-        <div className={classes.section}>
-          <Typography variant="h3" component="h2">
-            {post.title}
-          </Typography>
-          <Typography
-            gutterBottom
-            variant="h6"
-            color="textSecondary"
-            component="h2"
+        <div
+          className="info_container"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+        >
+          <button className="btn_add">Add Topics</button>
+          {/* <div
+            class="modal fade"
+            id="exampleModal"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
           >
-            {post.tags.map((tag) => (
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">
+                    Modal title
+                  </h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">
+                        Topic Name
+                      </label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        aria-describedby="emailHelp"
+                        // value={name}
+                        // onChange={(e)=>setName(e.target.value)}
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">
+                        Add Sub Topic
+                      </label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        aria-describedby="emailHelp"
+                        value={adder}
+                        onChange={(e) => setSubtopic(subtopic.push(adder))}
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">
+                        Add Sub Topic
+                      </label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        aria-describedby="emailHelp"
+                        value={adder}
+                        onChange={(e) => setSubtopic(subtopic.push(adder))}
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">
+                        Add Sub Topic
+                      </label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        aria-describedby="emailHelp"
+                        value={adder}
+                        onChange={(e) => setSubtopic(subtopic.push(adder))}
+                      />
+                    </div>
+
+                    <button
+                      type="submit"
+                      class="btn btn-primary"
+                      onClick={() => console.log(subtopic)}
+                    >
+                      Submit
+                    </button>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                  <button type="button" class="btn btn-primary">
+                    Save changes
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div> */}
+
+          <div className={classes.section}>
+            <Typography variant="h3" component="h2">
+              {post.title}
+            </Typography>
+            <Typography
+              gutterBottom
+              variant="h6"
+              color="textSecondary"
+              component="h2"
+            >
+              {post.tags.map((tag) => (
+                <Link
+                  to={`/tags/${tag}`}
+                  style={{ textDecoration: "none", color: "#3f51b5" }}
+                >
+                  {` #${tag} `}
+                </Link>
+              ))}
+            </Typography>
+            <Typography gutterBottom variant="body1" component="p">
+              {post.message}
+            </Typography>
+            <Typography variant="h6">
+              Created by:
               <Link
-                to={`/tags/${tag}`}
+                to={`/creators/${post.name}`}
                 style={{ textDecoration: "none", color: "#3f51b5" }}
               >
-                {` #${tag} `}
+                {` ${post.name}`}
               </Link>
-            ))}
-          </Typography>
-          <Typography gutterBottom variant="body1" component="p">
-            {post.message}
-          </Typography>
-          <Typography variant="h6">
-            Created by:
-            <Link
-              to={`/creators/${post.name}`}
-              style={{ textDecoration: "none", color: "#3f51b5" }}
-            >
-              {` ${post.name}`}
-            </Link>
-          </Typography>
-          <Typography variant="body1">
-            {moment(post.createdAt).fromNow()}
-          </Typography>
-          <Divider style={{ margin: "20px 0" }} />
-          <CommentSection post={post} />
-          <Divider style={{ margin: "20px 0" }} />
+            </Typography>
+            <Typography variant="body1">
+              {moment(post.createdAt).fromNow()}
+            </Typography>
+            <Divider style={{ margin: "20px 0" }} />
+            <CommentSection post={post} />
+            <Divider style={{ margin: "20px 0" }} />
+          </div>
         </div>
         {/* <div className={classes.imageSection}>
           <img className={classes.media} src={post.selectedFile || 'https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png'} alt={post.title} />
