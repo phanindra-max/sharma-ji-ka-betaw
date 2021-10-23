@@ -1,6 +1,6 @@
 import React from "react"
 import { useState } from "react"
-
+import { createNewTask } from "../../actions/tasks"
 function TrackCreationForm() {
   const [goal, setGoal] = useState("")
   const [startDate, setStartDate] = useState("")
@@ -9,7 +9,7 @@ function TrackCreationForm() {
   const [topic1, setTopic1] = useState("")
   const [topic2, setTopic2] = useState("")
   const [topic3, setTopic3] = useState("")
-  const submitHandler = (e) => {
+  const createNewTask = (e) => {
     e.preventDefault()
     const trackForm = {
       goal,
@@ -20,12 +20,12 @@ function TrackCreationForm() {
       topic2,
       topic3,
     }
-    //   dispatch(createPriceCard(trackForm));
+    dispatch(createNewTask(trackForm))
   }
   return (
     <>
       <div className="container">
-        <form>
+        <form onSubmit={createNewTask}>
           <div className="mb-3">
             <label htmlFor="exampleInputEmail1" className="form-label">
               Goal

@@ -10,7 +10,6 @@ import {
 } from "@material-ui/core"
 import { useDispatch } from "react-redux"
 import { useHistory, useLocation } from "react-router-dom"
-import ChipInput from "material-ui-chip-input"
 
 import { getPostsBySearch } from "../../actions/posts"
 import Posts from "../Posts/Posts"
@@ -53,11 +52,6 @@ const Home = () => {
     }
   }
 
-  const handleAddChip = (tag) => setTags([...tags, tag])
-
-  const handleDeleteChip = (chipToDelete) =>
-    setTags(tags.filter((tag) => tag !== chipToDelete))
-
   return (
     <Grow in>
       <Container maxWidth="xl">
@@ -82,7 +76,7 @@ const Home = () => {
                   className="btn_img"
                   src={searchImg}
                   alt=""
-                  srcSet=""
+                  srcset=""
                   onClick={searchPost}
                 />
 

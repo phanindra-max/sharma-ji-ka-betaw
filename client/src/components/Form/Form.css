@@ -1,4 +1,4 @@
-.btn_create_new_track{
+.btn_create_new_track {
     position: fixed;
     bottom: 0;
     right: 0;
@@ -9,9 +9,13 @@
     margin: 1rem;
     box-shadow: 1px 0px 5px black;
     background: white;
-
 }
-.form_creation_img{
+
+.btn_create_new_track:hover {
+    box-shadow: 1px 1px 7px black;
+}
+
+.form_creation_img {
     width: auto;
     height: 2rem;
 }

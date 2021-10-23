@@ -9,7 +9,6 @@ import { createPost, updatePost } from "../../actions/posts"
 import useStyles from "./styles"
 import { Link } from "react-router-dom"
 import "./Form.css"
-import formCreationImg from "./formCreationImg.svg"
 
 const Form = ({ currentId, setCurrentId }) => {
   const [postData, setPostData] = useState({
@@ -85,7 +84,12 @@ const Form = ({ currentId, setCurrentId }) => {
           {currentId ? `Editing "${post?.title}"` : "Creating a Track"}
         </Typography>
 
-        <button className="btn_create_new_track">
+        <button
+          className="btn btn_create_new_track"
+          data-bs-toggle="tooltip"
+          data-bs-placement="bottom"
+          title="Create Track"
+        >
           <Link to="/form">
             <img
               className="form_creation_img"
