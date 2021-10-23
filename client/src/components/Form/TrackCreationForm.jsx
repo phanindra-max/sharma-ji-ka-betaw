@@ -1,26 +1,23 @@
 import React from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { createNewTask } from "../../actions/tasks";
+// import { createNewTask } from "../../actions/tasks";
 function TrackCreationForm() {
-  const [goal, setGoal] = useState("");
+  const [trackName, setTrackName] = useState("");
   const [startDate, setStartDate] = useState("");
-  const [endDate, setEndDate] = useState("");
+  const [estimatedCompletionDate, setEstimatedCompletionDate] = useState("");
   const [description, setDescription] = useState("");
-  const [topic1, setTopic1] = useState("");
-  const [topic2, setTopic2] = useState("");
-  const [topic3, setTopic3] = useState("");
+  // const [topic1, setTopic1] = useState("");
+  // const [topic2, setTopic2] = useState("");
+  // const [topic3, setTopic3] = useState("");
   const dispatch = useDispatch();
   const createNewTask = (e) => {
     e.preventDefault();
     const trackForm = {
-      goal,
+      trackName,
       startDate,
-      endDate,
+      estimatedCompletionDate,
       description,
-      topic1,
-      topic2,
-      topic3,
     };
     dispatch(createNewTask(trackForm));
   };
@@ -30,16 +27,15 @@ function TrackCreationForm() {
         <form onSubmit={createNewTask}>
           <div className="mb-3">
             <label htmlFor="exampleInputEmail1" className="form-label">
-              Goal
+              Track Name
             </label>
             <input
               type="text"
               className="form-control"
-              // id="exampleInputEmail1"
               aria-describedby="emailHelp"
-              value={goal}
+              value={trackName}
               onChange={(e) => {
-                setGoal(e.target.value);
+                setTrackName(e.target.value);
               }}
             />
           </div>
@@ -50,7 +46,6 @@ function TrackCreationForm() {
             <input
               type="date"
               className="form-control"
-              // id="exampleInputEmail1"
               aria-describedby="emailHelp"
               value={startDate}
               onChange={(e) => {
@@ -65,11 +60,10 @@ function TrackCreationForm() {
             <input
               type="date"
               className="form-control"
-              // id="exampleInputEmail1"
               aria-describedby="emailHelp"
-              value={endDate}
+              value={estimatedCompletionDate}
               onChange={(e) => {
-                setEndDate(e.target.value);
+                setEstimatedCompletionDate(e.target.value);
               }}
             />
           </div>
@@ -86,51 +80,6 @@ function TrackCreationForm() {
                 setDescription(e.target.value);
               }}
             ></textarea>
-          </div>
-          <div className="mb-3">
-            <label htmlFor="exampleInputEmail1" className="form-label">
-              Topic 1
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              // id="exampleInputEmail1"
-              aria-describedby="emailHelp"
-              value={topic1}
-              onChange={(e) => {
-                setTopic1(e.target.value);
-              }}
-            />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="exampleInputEmail1" className="form-label">
-              Topic 2
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              // id="exampleInputEmail1"
-              aria-describedby="emailHelp"
-              value={topic2}
-              onChange={(e) => {
-                setTopic2(e.target.value);
-              }}
-            />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="exampleInputEmail1" className="form-label">
-              Topic 3
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              // id="exampleInputEmail1"
-              aria-describedby="emailHelp"
-              value={topic3}
-              onChange={(e) => {
-                setTopic3(e.target.value);
-              }}
-            />
           </div>
 
           <button type="submit" className="btn btn-primary">
