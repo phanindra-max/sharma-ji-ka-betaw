@@ -3,7 +3,7 @@ const router = express.Router();
 import { postTrack, getTrack, getTrackById } from "../controllers/track.js";
 import auth from "../middleware/auth.js";
 
-router.post("/", auth, postTrack);
+router.post("/", postTrack);
 router.get("/", getTrack);
 router.get("/:id", getTrackById);
 

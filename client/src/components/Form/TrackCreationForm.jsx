@@ -1,27 +1,33 @@
 import React from "react";
 import { useState } from "react";
+import axios from "axios";
 
 function TrackCreationForm() {
-    const [goal, setGoal] = useState("")
-    const [startDate, setStartDate] = useState("")
-    const [endDate, setEndDate] = useState("")
-    const [description, setDescription] = useState("")
-    const [topic1, setTopic1] = useState("")
-    const [topic2, setTopic2] = useState("")
-    const [topic3, setTopic3] = useState("")
-    const submitHandler = (e) => {
-        e.preventDefault();
-          const trackForm = {
-            goal,
-            startDate,
-            endDate,
-            description,
-            topic1,
-            topic2,
-            topic3
-          };
-        //   dispatch(createPriceCard(trackForm));
+  const [trackName, setTrackName] = useState("");
+  const [startDate, setStartDate] = useState("");
+  const [estimatedCompletionDate, setEstimatedCompletionDate] = useState("");
+  const [description, setDescription] = useState("");
+
+  // const config = {
+  //   headers: {
+  //     Authorization: `Bearer ${userInfo.token}`,
+  //   },
+  // };
+
+  const submitHandler = async (e) => {
+    e.preventDefault();
+    try {
+      const trackForm = {
+        trackName,
+        startDate,
+        estimatedCompletionDate,
+        description,
       };
+      await axios.post(`/posts`, trackForm);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <>
       <div className="container">
@@ -35,8 +41,9 @@ function TrackCreationForm() {
               class="form-control"
               // id="exampleInputEmail1"
               aria-describedby="emailHelp"
-              value={goal}
-              onChange={(e)=>{setGoal(e.target.value)}}
+              onChange={(e) => {
+                setTrackName(e.target.value);
+              }}
             />
           </div>
           <div class="mb-3">
@@ -48,8 +55,9 @@ function TrackCreationForm() {
               class="form-control"
               // id="exampleInputEmail1"
               aria-describedby="emailHelp"
-              value={startDate}
-              onChange={(e)=>{setStartDate(e.target.value)}}
+              onChange={(e) => {
+                setStartDate(e.target.value);
+              }}
             />
           </div>
           <div class="mb-3">
@@ -61,9 +69,9 @@ function TrackCreationForm() {
               class="form-control"
               // id="exampleInputEmail1"
               aria-describedby="emailHelp"
-              value={endDate}
-              onChange={(e)=>{setEndDate(e.target.value)}}
-
+              onChange={(e) => {
+                setEstimatedCompletionDate(e.target.value);
+              }}
             />
           </div>
           <div class="mb-3">
@@ -74,11 +82,12 @@ function TrackCreationForm() {
               class="form-control"
               id="exampleFormControlTextarea1"
               rows="3"
-              value={description}
-              onChange={(e)=>{setDescription(e.target.value)}}
+              onChange={(e) => {
+                setDescription(e.target.value);
+              }}
             ></textarea>
           </div>
-          <div class="mb-3">
+          {/* <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">
               Topic 1
             </label>
@@ -87,8 +96,9 @@ function TrackCreationForm() {
               class="form-control"
               // id="exampleInputEmail1"
               aria-describedby="emailHelp"
-              value={topic1}
-              onChange={(e)=>{setTopic1(e.target.value)}}
+              onChange={(e) => {
+                setTopic1(e.target.value);
+              }}
             />
           </div>
           <div class="mb-3">
@@ -100,9 +110,9 @@ function TrackCreationForm() {
               class="form-control"
               // id="exampleInputEmail1"
               aria-describedby="emailHelp"
-              
-              value={topic2}
-              onChange={(e)=>{setTopic2(e.target.value)}}
+              onChange={(e) => {
+                setTopic2(e.target.value);
+              }}
             />
           </div>
           <div class="mb-3">
@@ -114,10 +124,11 @@ function TrackCreationForm() {
               class="form-control"
               // id="exampleInputEmail1"
               aria-describedby="emailHelp"
-              value={topic3}
-              onChange={(e)=>{setTopic3(e.target.value)}}
+              onChange={(e) => {
+                setTopic3(e.target.value);
+              }}
             />
-          </div>
+          </div> */}
 
           <button type="submit" class="btn btn-primary">
             Submit
