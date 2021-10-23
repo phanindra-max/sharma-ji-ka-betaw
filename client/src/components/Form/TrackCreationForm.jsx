@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+// import { useDispatch, useSelector } from "react-redux";
 // import { createNewTask } from "../../actions/tasks";
 function TrackCreationForm() {
   const [trackName, setTrackName] = useState("");
@@ -10,21 +10,21 @@ function TrackCreationForm() {
   // const [topic1, setTopic1] = useState("");
   // const [topic2, setTopic2] = useState("");
   // const [topic3, setTopic3] = useState("");
-  const dispatch = useDispatch();
-  const createNewTask = (e) => {
+  // const dispatch = useDispatch();
+  const submitHandler = async (e) => {
     e.preventDefault();
-    const trackForm = {
+    const newPost = {
       trackName,
       startDate,
       estimatedCompletionDate,
       description,
     };
-    dispatch(createNewTask(trackForm));
+    // dispatch(createNewTask(newPost));
   };
   return (
     <>
       <div className="container">
-        <form onSubmit={createNewTask}>
+        <form onSubmit={submitHandler}>
           <div className="mb-3">
             <label htmlFor="exampleInputEmail1" className="form-label">
               Track Name
