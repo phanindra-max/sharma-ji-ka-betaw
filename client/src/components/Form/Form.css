@@ -11,6 +11,9 @@
     background: white;
 
 }
+.btn_create_new_track:hover{
+    box-shadow: 1px 1px 7px black;
+}
 .form_creation_img{
     width: auto;
     height: 2rem;
