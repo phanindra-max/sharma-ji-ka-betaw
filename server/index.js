@@ -1,10 +1,16 @@
+import path from "path";
 import express from "express";
+import dotenv from "dotenv";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import cors from "cors";
 
 import postRoutes from "./routes/posts.js";
 import userRouter from "./routes/user.js";
+import trackRouter from "./routes/trackRoutes.js";
+import topicRouter from "./routes/topicsRoutes.js";
+
+dotenv.config();
 
 const app = express();
 
@@ -14,13 +20,32 @@ app.use(cors());
 
 app.use("/posts", postRoutes);
 app.use("/user", userRouter);
+app.use("/track", trackRouter);
+app.use("/topic", topicRouter);
 
-const CONNECTION_URL =
-  "mongodb+srv://nashagri:y5tBsyg783gPa0e5@cluster0.jlnit.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+// console.log(process.env.NODE_ENV);
+
 const PORT = process.env.PORT || 5000;
 
+const __dirname = path.resolve();
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "./client/build")));
+
+  app.get("*", (req, res) =>
+    res.sendFile(path.join(__dirname, "./client/build/index.html"))
+  );
+} else {
+  app.get("/", (req, res) => {
+    res.send("API is running....");
+  });
+}
+
 mongoose
-  .connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+  .connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then(() =>
     app.listen(PORT, () =>
       console.log(`Server Running on Port: http://localhost:${PORT}`)
