@@ -1,16 +1,18 @@
-import React from "react"
-import { useState } from "react"
-import { createNewTask } from "../../actions/tasks"
+import React from "react";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { createNewTask } from "../../actions/tasks";
 function TrackCreationForm() {
-  const [goal, setGoal] = useState("")
-  const [startDate, setStartDate] = useState("")
-  const [endDate, setEndDate] = useState("")
-  const [description, setDescription] = useState("")
-  const [topic1, setTopic1] = useState("")
-  const [topic2, setTopic2] = useState("")
-  const [topic3, setTopic3] = useState("")
+  const [goal, setGoal] = useState("");
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
+  const [description, setDescription] = useState("");
+  const [topic1, setTopic1] = useState("");
+  const [topic2, setTopic2] = useState("");
+  const [topic3, setTopic3] = useState("");
+  const dispatch = useDispatch();
   const createNewTask = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     const trackForm = {
       goal,
       startDate,
@@ -19,9 +21,9 @@ function TrackCreationForm() {
       topic1,
       topic2,
       topic3,
-    }
-    dispatch(createNewTask(trackForm))
-  }
+    };
+    dispatch(createNewTask(trackForm));
+  };
   return (
     <>
       <div className="container">
@@ -37,7 +39,7 @@ function TrackCreationForm() {
               aria-describedby="emailHelp"
               value={goal}
               onChange={(e) => {
-                setGoal(e.target.value)
+                setGoal(e.target.value);
               }}
             />
           </div>
@@ -52,7 +54,7 @@ function TrackCreationForm() {
               aria-describedby="emailHelp"
               value={startDate}
               onChange={(e) => {
-                setStartDate(e.target.value)
+                setStartDate(e.target.value);
               }}
             />
           </div>
@@ -67,7 +69,7 @@ function TrackCreationForm() {
               aria-describedby="emailHelp"
               value={endDate}
               onChange={(e) => {
-                setEndDate(e.target.value)
+                setEndDate(e.target.value);
               }}
             />
           </div>
@@ -81,7 +83,7 @@ function TrackCreationForm() {
               rows="3"
               value={description}
               onChange={(e) => {
-                setDescription(e.target.value)
+                setDescription(e.target.value);
               }}
             ></textarea>
           </div>
@@ -96,7 +98,7 @@ function TrackCreationForm() {
               aria-describedby="emailHelp"
               value={topic1}
               onChange={(e) => {
-                setTopic1(e.target.value)
+                setTopic1(e.target.value);
               }}
             />
           </div>
@@ -111,7 +113,7 @@ function TrackCreationForm() {
               aria-describedby="emailHelp"
               value={topic2}
               onChange={(e) => {
-                setTopic2(e.target.value)
+                setTopic2(e.target.value);
               }}
             />
           </div>
@@ -126,7 +128,7 @@ function TrackCreationForm() {
               aria-describedby="emailHelp"
               value={topic3}
               onChange={(e) => {
-                setTopic3(e.target.value)
+                setTopic3(e.target.value);
               }}
             />
           </div>
@@ -140,7 +142,7 @@ function TrackCreationForm() {
       <br />
       <br />
     </>
-  )
+  );
 }
 
-export default TrackCreationForm
+export default TrackCreationForm;
