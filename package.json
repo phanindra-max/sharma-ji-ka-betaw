@@ -1,22 +1,26 @@
 {
-  "name": "sharma-ji-ka-betaw",
+  "name": "mern-stack-api",
   "version": "1.0.0",
-  "description": "Goal Planner and organizer to give you the super powers of Sharma Ji Ka Betaaw 🏋️‍♂️",
-  "main": "server/index.js",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "nodemon server/index.js",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/phanindra-max/sharma-ji-ka-betaw.git"
-  },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/phanindra-max/sharma-ji-ka-betaw/issues"
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.29"
   },
-  "homepage": "https://github.com/phanindra-max/sharma-ji-ka-betaw#readme"
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
 }
