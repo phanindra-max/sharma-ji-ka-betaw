@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Potta+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@1,700&display=swap');
 
 .Title_h2 {
-    font-family: 'Potta One', cursive!important;
+    font-family: 'Zilla Slab', serif!important;
     font-size: xx-large;
     font-weight: bolder;
     text-shadow: 3px 2px 2px rgb(0 0 0 / 10%);
