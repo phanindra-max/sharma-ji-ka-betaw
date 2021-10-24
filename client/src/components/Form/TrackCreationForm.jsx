@@ -1,3 +1,4 @@
+import axios from "axios";
 import React from "react";
 import { useState } from "react";
 // import { useDispatch, useSelector } from "react-redux";
@@ -11,15 +12,24 @@ function TrackCreationForm() {
   // const [topic2, setTopic2] = useState("");
   // const [topic3, setTopic3] = useState("");
   // const dispatch = useDispatch();
+  const user = JSON.parse(localStorage.getItem("profile"));
+  const config = {
+    headers: {
+      Authorization: `Bearer ${user.token}`,
+    },
+  };
+
   const submitHandler = async (e) => {
     e.preventDefault();
     const newPost = {
+      user: user.result._id,
       trackName,
       startDate,
       estimatedCompletionDate,
       description,
     };
-    // dispatch(createNewTask(newPost));
+    const response = await axios.post(`/track`, newPost, config);
+    console.log(response);
   };
   return (
     <>
