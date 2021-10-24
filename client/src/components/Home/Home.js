@@ -39,6 +39,9 @@ const Home = () => {
 
   const history = useHistory();
 
+  const [searchNew, setSearchNew] = useState("");
+  const [onClickSearchNew, setOnClickSearchNew] = useState("");
+
   useEffect(() => {
     if (response.length === 0) {
       asyncFunc();
@@ -80,9 +83,9 @@ const Home = () => {
           <Grid item xs={12} sm={6} md={9}>
             {/* <Posts setCurrentId={setCurrentId} /> */}
 
-            {response.length > 0 ? <TrackCards res={response} /> : asyncFunc}
+            {response.length > 0 ? <TrackCards res={response} search={onClickSearchNew}/> : asyncFunc}
           </Grid>
-          {/* <Grid item xs={12} sm={6} md={3}>
+          <Grid item xs={12} sm={6} md={3}>
             <AppBar
               className={classes.appBarSearch}
               position="static"
@@ -94,27 +97,26 @@ const Home = () => {
                   src={searchImg}
                   alt=""
                   srcset=""
-                  onClick={searchPost}
+                  onClick={()=>setOnClickSearchNew(searchNew)}
                 />
 
                 <TextField
-                  onKeyDown={handleKeyPress}
+                  onKeyDown={()=>setOnClickSearchNew(searchNew)}
                   name="search"
                   variant="outlined"
-                  label="Search Memories"
+                  placeholder="Enter the dragon"
                   fullWidth
-                  value={search}
-                  onChange={(e) => setSearch(e.target.value)}
+                  onChange={(e) => setSearchNew(e.target.value)}
                 />
               </div>
-              <Button
+              {/* <Button
                 onClick={searchPost}
                 className={classes.searchButton}
                 variant="contained"
                 color="primary"
               >
                 Search
-              </Button> 
+              </Button>  */}
             </AppBar>
             <Form currentId={currentId} setCurrentId={setCurrentId} />
             {!searchQuery && !tags.length && (
@@ -124,9 +126,10 @@ const Home = () => {
                 elevation={6}
               >
                 <Pagination page={page} />
-              </Paper>
-            )}
-          </Grid> */}
+                </Paper>
+                )}
+              </Grid>
+              {/* <Form currentId={currentId} setCurrentId={setCurrentId} /> */}
         </Grid>
       </Container>
     </Grow>
