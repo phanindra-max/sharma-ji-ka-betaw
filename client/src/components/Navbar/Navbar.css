@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Potta+One&display=swap');
+
 .Title_h2 {
+    font-family: 'Potta One', cursive!important;
     font-size: xx-large;
     font-weight: bolder;
     text-shadow: 3px 2px 2px rgb(0 0 0 / 10%);
