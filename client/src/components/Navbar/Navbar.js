@@ -1,40 +1,40 @@
-import React, { useState, useEffect } from "react"
-import { AppBar, Typography, Toolbar, Avatar, Button } from "@material-ui/core"
-import { Link, useHistory, useLocation } from "react-router-dom"
-import { useDispatch } from "react-redux"
-import decode from "jwt-decode"
+import React, { useState, useEffect } from "react";
+import { AppBar, Typography, Toolbar, Avatar, Button } from "@material-ui/core";
+import { Link, useHistory, useLocation } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import decode from "jwt-decode";
 
-import memoriesLogo from "../../images/memoriesLogo.png"
-import memoriesText from "../../images/memoriesText.png"
-import * as actionType from "../../constants/actionTypes"
-import useStyles from "./styles"
+import memoriesLogo from "../../images/memoriesLogo.png";
+import memoriesText from "../../images/memoriesText.png";
+import * as actionType from "../../constants/actionTypes";
+import useStyles from "./styles";
 
 const Navbar = () => {
-  const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")))
-  const dispatch = useDispatch()
-  const location = useLocation()
-  const history = useHistory()
-  const classes = useStyles()
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
+  const dispatch = useDispatch();
+  const location = useLocation();
+  const history = useHistory();
+  const classes = useStyles();
 
   const logout = () => {
-    dispatch({ type: actionType.LOGOUT })
+    dispatch({ type: actionType.LOGOUT });
 
-    history.push("/auth")
+    history.push("/auth");
 
-    setUser(null)
-  }
+    setUser(null);
+  };
 
   useEffect(() => {
-    const token = user?.token
+    const token = user?.token;
 
     if (token) {
-      const decodedToken = decode(token)
+      const decodedToken = decode(token);
 
-      if (decodedToken.exp * 1000 < new Date().getTime()) logout()
+      if (decodedToken.exp * 1000 < new Date().getTime()) logout();
     }
 
-    setUser(JSON.parse(localStorage.getItem("profile")))
-  }, [location])
+    setUser(JSON.parse(localStorage.getItem("profile")));
+  }, [location]);
 
   return (
     <AppBar className={classes.appBar} position="static" color="inherit">
@@ -59,7 +59,7 @@ const Navbar = () => {
             <Avatar
               className={classes.purple}
               alt={user?.result.name}
-              src={`https://avatars.dicebear.com/api/micah/:${user.result._id.toString()}.svg`}
+              src={`https://avatars.dicebear.com/api/micah/:${user.result.name.toString()}.svg`}
             >
               {user?.result.name.charAt(0)}
             </Avatar>
@@ -87,7 +87,7 @@ const Navbar = () => {
         )}
       </Toolbar>
     </AppBar>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
