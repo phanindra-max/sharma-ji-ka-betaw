@@ -44,7 +44,8 @@ const Navbar = () => {
      
           <h2 className="Title_h2">
             <Link style={{textDecoration:"none"}}className="Title_h2" to="/">
-            Sharma-Ji-Ka-BetaW <img className="Title_img" src={NavImg} alt="" />
+            Sharma-Ji-Ka-BetaW
+             {/* <img className="Title_img" src={NavImg} alt="" /> */}
             </Link>
             </h2>
       
