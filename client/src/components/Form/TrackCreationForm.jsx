@@ -37,7 +37,7 @@ function TrackCreationForm() {
   };
   return (
     <>
-      <div className="container">
+      <div className="container col-lg-6">
         <form onSubmit={submitHandler}>
           <div className="mb-3">
             <label htmlFor="exampleInputEmail1" className="form-label">

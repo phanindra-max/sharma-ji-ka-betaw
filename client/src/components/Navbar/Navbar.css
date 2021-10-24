@@ -21,6 +21,14 @@
 a:hover{
     color:#481d95;
 }
+.hava{
+    color: #333333ba;
+    font-size: 1rem;
+}
+
+
+
+
 @media screen and (max-width:501px) {
     .Title_h2{
         font-size: x-large;
@@ -28,6 +36,9 @@ a:hover{
 }
 @media screen and (max-width:415px) {
     .Title_h2{
-        font-size: large;
+        font-size: larger;
+    }
+    .hava{
+        font-size: 0.9rem;
     }
 }
