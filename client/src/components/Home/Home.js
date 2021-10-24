@@ -62,7 +62,7 @@ const Home = () => {
     }
   };
   const asyncFunc = async () => {
-    const res = await axios.get(`/track`);
+    const res = await axios.get(`track`);
     setResponse(res.data);
   };
   // console.log(response);
