@@ -3,11 +3,13 @@ import { AppBar, Typography, Toolbar, Avatar, Button } from "@material-ui/core"
 import { Link, useHistory, useLocation } from "react-router-dom"
 import { useDispatch } from "react-redux"
 import decode from "jwt-decode"
+import "./Navbar.css";
 
 import memoriesLogo from "../../images/memoriesLogo.png"
 import memoriesText from "../../images/memoriesText.png"
 import * as actionType from "../../constants/actionTypes"
 import useStyles from "./styles"
+import NavImg from "./navImg.svg";
 
 const Navbar = () => {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")))
@@ -38,20 +40,24 @@ const Navbar = () => {
 
   return (
     <AppBar className={classes.appBar} position="static" color="inherit">
+      <div className="Title_in">
+     
+          <h2 className="Title_h2">
+            <Link style={{textDecoration:"none"}}className="Title_h2" to="/">
+            Sharma-Ji-Ka-BetaW <img className="Title_img" src={NavImg} alt="" />
+            </Link>
+            </h2>
+      
+          
+        </div>
       <Link to="/" className={classes.brandContainer}>
-        <img
+        {/* <img
           component={Link}
           to="/"
           src={memoriesText}
           alt="icon"
           height="45px"
-        />
-        <img
-          className={classes.image}
-          src={memoriesLogo}
-          alt="icon"
-          height="40px"
-        />
+        /> */}
       </Link>
       <Toolbar className={classes.toolbar}>
         {user && user?.result ? (
@@ -59,7 +65,7 @@ const Navbar = () => {
             <Avatar
               className={classes.purple}
               alt={user?.result.name}
-              src={`https://avatars.dicebear.com/api/micah/:${user.result._id.toString()}.svg`}
+              src={`https://avatars.dicebear.com/api/micah/:${user.result.name.toString()}.svg`}
             >
               {user?.result.name.charAt(0)}
             </Avatar>

@@ -1,0 +1,29 @@
+.Title_h2 {
+    font-size: xx-large;
+    font-weight: bolder;
+    text-shadow: 3px 2px 2px rgb(0 0 0 / 10%);
+    color: #481d95;
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+}
+.Title_h2:hover{
+    text-shadow: 4px 5px 2px rgb(0 0 0 / 10%);
+}
+.Title_img{
+    width: auto;
+    height: 3rem;
+    
+}
+a:hover{
+    color:#481d95;
+}
+@media screen and (max-width:501px) {
+    .Title_h2{
+        font-size: x-large;
+    }
+}
+@media screen and (max-width:415px) {
+    .Title_h2{
+        font-size: large;
+    }
+}
