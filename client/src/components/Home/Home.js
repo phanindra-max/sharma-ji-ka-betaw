@@ -29,7 +29,7 @@ const Home = () => {
   const query = useQuery();
   const page = query.get("page") || 1;
   const searchQuery = query.get("searchQuery");
-  
+
   const [currentId, setCurrentId] = useState(0);
   const [response, setResponse] = useState([]);
   const dispatch = useDispatch();
@@ -40,7 +40,7 @@ const Home = () => {
   const history = useHistory();
 
   useEffect(() => {
-    if (response.length===0){
+    if (response.length === 0) {
       asyncFunc();
     }
   }, []);
@@ -80,13 +80,9 @@ const Home = () => {
           <Grid item xs={12} sm={6} md={9}>
             {/* <Posts setCurrentId={setCurrentId} /> */}
 
-            {response.length > 0 ? (
-              <TrackCards res={response} />
-            ) : (
-              asyncFunc
-            )}
+            {response.length > 0 ? <TrackCards res={response} /> : asyncFunc}
           </Grid>
-          <Grid item xs={12} sm={6} md={3}>
+          {/* <Grid item xs={12} sm={6} md={3}>
             <AppBar
               className={classes.appBarSearch}
               position="static"
@@ -111,14 +107,14 @@ const Home = () => {
                   onChange={(e) => setSearch(e.target.value)}
                 />
               </div>
-              {/* <Button
+              <Button
                 onClick={searchPost}
                 className={classes.searchButton}
                 variant="contained"
                 color="primary"
               >
                 Search
-              </Button> */}
+              </Button> 
             </AppBar>
             <Form currentId={currentId} setCurrentId={setCurrentId} />
             {!searchQuery && !tags.length && (
@@ -130,7 +126,7 @@ const Home = () => {
                 <Pagination page={page} />
               </Paper>
             )}
-          </Grid>
+          </Grid> */}
         </Grid>
       </Container>
     </Grow>
