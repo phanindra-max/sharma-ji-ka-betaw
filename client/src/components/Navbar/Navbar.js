@@ -59,7 +59,7 @@ const Navbar = () => {
             <Avatar
               className={classes.purple}
               alt={user?.result.name}
-              src={user?.result.imageUrl}
+              src={`https://avatars.dicebear.com/api/micah/:${user.result._id.toString()}.svg`}
             >
               {user?.result.name.charAt(0)}
             </Avatar>

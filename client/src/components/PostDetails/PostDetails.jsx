@@ -14,7 +14,7 @@ import CommentSection from "./CommentSection";
 import useStyles from "./styles";
 import "./PostDetails.css";
 import { useState } from "react";
-import PencilImg from "./PencilImg.svg"
+import PencilImg from "./PencilImg.svg";
 
 const Post = () => {
   const { post, posts, isLoading } = useSelector((state) => state.posts);
@@ -168,12 +168,14 @@ const Post = () => {
         </div>
 
         <div className={classes.card}>
-          <div
-            className="info_container"
-            data-bs-toggle="modal"
-            data-bs-target="#exampleModal"
-          >
-            <button className="btn_add">Add Topics</button>
+          <div className="info_container">
+            <button
+              className="btn_add"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+            >
+              Add Topics
+            </button>
 
             <div className={classes.section}>
               <Typography variant="h3" component="h2">
@@ -221,14 +223,14 @@ const Post = () => {
           <div className="flow_chart">
             <div className="head">Competive Coding</div>
 
-
             {/* repeat this */}
             <div className="block">
               <div className="topic">
                 <div className="circle"></div>
                 <div className="outer_border">
-                  <div className="title border">Math
-                    <img className="pencil" src={PencilImg}/>
+                  <div className="title border">
+                    Math
+                    <img className="pencil" src={PencilImg} />
                   </div>
                   <div className="sub_topics border">
                     <div className="sub_topic">math1</div>
@@ -241,13 +243,13 @@ const Post = () => {
             </div>
             {/* repeat closes here */}
 
-
             <div className="block">
               <div className="topic">
                 <div className="circle"></div>
                 <div className="outer_border">
-                  <div className="title border">Math
-                    <img className="pencil" src={PencilImg}/>
+                  <div className="title border">
+                    Math
+                    <img className="pencil" src={PencilImg} />
                   </div>
                   <div className="sub_topics border">
                     <div className="sub_topic">math1</div>
@@ -262,8 +264,9 @@ const Post = () => {
               <div className="topic">
                 <div className="circle"></div>
                 <div className="outer_border">
-                  <div className="title border">Math
-                    <img className="pencil" src={PencilImg}/>
+                  <div className="title border">
+                    Math
+                    <img className="pencil" src={PencilImg} />
                   </div>
                   <div className="sub_topics border">
                     <div className="sub_topic">math1</div>
@@ -274,16 +277,6 @@ const Post = () => {
                 </div>
               </div>
             </div>
-
-
-
-            
-
-
-
-
-
-            
           </div>
         </div>
         {!!recommendedPosts.length && (
