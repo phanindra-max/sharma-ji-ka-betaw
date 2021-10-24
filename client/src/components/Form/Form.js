@@ -80,14 +80,13 @@ const Form = ({ currentId, setCurrentId }) => {
       data-bs-toggle="tooltip"
       data-bs-placement="bottom"
       title="Create Track"
+      onClick={() => window.location.replace(`/form`)}
     >
-      <Link to="/form">
-        <img
-          className="form_creation_img"
-          src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjI0cHgiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iMjRweCIgeD0iMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeT0iMCI+PGc+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMTAgMTB2NC4wMDFoMTRWMTB6IiBmaWxsPSIjNDI4NUY0Ii8+PHBhdGggZD0iTTEwIDEwSDB2NC4wMDFoMTBMMTQuMDAxIDEweiIgZmlsbD0iI0ZCQkMwNSIvPjxwYXRoIGQ9Ik0xMCAxNGg0djEwaC00eiIgZmlsbD0iIzM0QTg1MyIvPjxwYXRoIGQ9Ik0xMCAwdjE0bDQuMDAxLTRWMHoiIGZpbGw9IiNFQTQzMzUiLz48L2c+PC9nPjwvc3ZnPg=="
-          alt=""
-        />
-      </Link>
+      <img
+        className="form_creation_img"
+        src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjI0cHgiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iMjRweCIgeD0iMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeT0iMCI+PGc+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMTAgMTB2NC4wMDFoMTRWMTB6IiBmaWxsPSIjNDI4NUY0Ii8+PHBhdGggZD0iTTEwIDEwSDB2NC4wMDFoMTBMMTQuMDAxIDEweiIgZmlsbD0iI0ZCQkMwNSIvPjxwYXRoIGQ9Ik0xMCAxNGg0djEwaC00eiIgZmlsbD0iIzM0QTg1MyIvPjxwYXRoIGQ9Ik0xMCAwdjE0bDQuMDAxLTRWMHoiIGZpbGw9IiNFQTQzMzUiLz48L2c+PC9nPjwvc3ZnPg=="
+        alt=""
+      />
     </button>
   );
 };
