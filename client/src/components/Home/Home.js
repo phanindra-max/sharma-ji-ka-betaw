@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Container,
   Grow,
@@ -18,6 +18,8 @@ import Pagination from "../Pagination";
 import useStyles from "./styles";
 import searchImg from "./searchImg.svg";
 import "./Home.css";
+import TrackCards from "./TrackCards";
+import axios from "axios";
 
 function useQuery() {
   return new URLSearchParams(useLocation().search);
@@ -27,13 +29,21 @@ const Home = () => {
   const query = useQuery();
   const page = query.get("page") || 1;
   const searchQuery = query.get("searchQuery");
-
+  
   const [currentId, setCurrentId] = useState(0);
+  const [response, setResponse] = useState([]);
   const dispatch = useDispatch();
 
   const [search, setSearch] = useState("");
   const [tags, setTags] = useState([]);
+
   const history = useHistory();
+
+  useEffect(() => {
+    if (response.length===0){
+      asyncFunc();
+    }
+  }, []);
 
   const searchPost = () => {
     if (search.trim() || tags) {
@@ -51,6 +61,11 @@ const Home = () => {
       searchPost();
     }
   };
+  const asyncFunc = async () => {
+    const res = await axios.get(`/track`);
+    setResponse(res.data);
+  };
+  // console.log(response);
 
   return (
     <Grow in>
@@ -63,7 +78,13 @@ const Home = () => {
           className={classes.gridContainer}
         >
           <Grid item xs={12} sm={6} md={9}>
-            <Posts setCurrentId={setCurrentId} />
+            {/* <Posts setCurrentId={setCurrentId} /> */}
+
+            {response.length > 0 ? (
+              <TrackCards res={response} />
+            ) : (
+              asyncFunc
+            )}
           </Grid>
           <Grid item xs={12} sm={6} md={3}>
             <AppBar

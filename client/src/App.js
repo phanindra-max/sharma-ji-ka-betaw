@@ -8,6 +8,7 @@ import Home from './components/Home/Home';
 import Auth from './components/Auth/Auth';
 import CreatorOrTag from './components/CreatorOrTag/CreatorOrTag';
 import TrackCreationForm from './components/Form/TrackCreationForm';
+import TrackCards from './components/Home/TrackCards';
 
 const App = () => {
   const user = JSON.parse(localStorage.getItem('profile'));
@@ -24,6 +25,8 @@ const App = () => {
           <Route path={['/creators/:name', '/tags/:name']} component={CreatorOrTag} />
           <Route path="/auth" exact component={() => (!user ? <Auth /> : <Redirect to="/posts" />)} />
           <Route path="/form" exact component={TrackCreationForm} />
+          <Route path="/ccpp" exact component={TrackCards} />
+          
           
         </Switch>
       </Container>
