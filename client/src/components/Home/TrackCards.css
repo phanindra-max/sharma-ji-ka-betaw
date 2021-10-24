@@ -6,7 +6,7 @@
   flex-direction: column;
   height: auto;
   border-radius: 11px;
-  margin: 0 0 1rem 0;
+  margin:  1rem 0.5rem;
   background-color: white;
 }
 
@@ -33,4 +33,10 @@ button.btn_card {
   display: flex;
   justify-content: flex-start;
   margin: 0 0 1rem 2rem;
+}
+.flexy{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* justify-content: ; */
 }
