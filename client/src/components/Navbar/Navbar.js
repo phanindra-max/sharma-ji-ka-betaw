@@ -8,6 +8,8 @@ import memoriesLogo from "../../images/memoriesLogo.png";
 import memoriesText from "../../images/memoriesText.png";
 import * as actionType from "../../constants/actionTypes";
 import useStyles from "./styles";
+import NavImg from "./navImg.svg"
+import "./Navbar.css";
 
 const Navbar = () => {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
