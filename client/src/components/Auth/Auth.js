@@ -55,7 +55,7 @@ const SignUp = () => {
   const googleSuccess = async (res) => {
     const result = res?.profileObj;
     const token = res?.tokenId;
-    console.log("Google Sign In was successful :-)");
+    // console.log("Google Sign In was successful :-)");
 
     try {
       dispatch({ type: AUTH, data: { result, token } });

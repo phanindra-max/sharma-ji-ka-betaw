@@ -28,8 +28,8 @@ function TrackCreationForm() {
       estimatedCompletionDate,
       description,
     };
-    const response = await axios.post(`track`, newPost, config);
-    console.log(response);
+    const response = await axios.post(`api/track`, newPost, config);
+    // console.log(response);
   };
   return (
     <>

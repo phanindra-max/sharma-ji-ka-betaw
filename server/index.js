@@ -23,10 +23,10 @@ app.use(express.urlencoded({ limit: "30mb", extended: true }));
 //   })
 // )
 
-app.use("/posts", postRoutes);
-app.use("/user", userRouter);
-app.use("/track", trackRouter);
-app.use("/topic", topicRouter);
+app.use("/api/posts", postRoutes);
+app.use("/api/user", userRouter);
+app.use("/api/track", trackRouter);
+app.use("/api/topic", topicRouter);
 
 // console.log(process.env.NODE_ENV);
 
