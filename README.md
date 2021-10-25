@@ -1,3 +1,4 @@
+
 # sharma-ji-ka-betaw
 
 ## Goal Planner and organizer to give you the super powers of Sharma Ji Ka Betaaw 🏋️‍♂️
@@ -9,6 +10,16 @@ Hi! Thanks for checking in. This repo hosts source code of and online organizer 
 # Introduction
 
 Sharma-Ji-Ka-Betaw is a Hindi metaphor for citing obidient kid. In the age of information where everyone is constantly bombarded with lots of distractions, it's quite difficult to focus and keep your eye on the main goal That's where this project tries to help you and give the super powers of **Sharma-Ji-Ka-Betaw!**
+
+## Using the Website & Key Features
+
+The website mainly focuses on bringing the openness where anyone can join and create a learning track
+
+- User must have to signed in to create any tracks of his own
+- After signing in, user can create a track using the plus button at the bottom right corner of the screen.
+- Then user can navigate to his own track and strat adding the topics/subtopics in order to organize how he/she wants to achieve his goal
+- After completing a track you can mark it as completed just a small visual token of achieving something, you'll see the cards turning party mode(green color, lol) 
+
 
 ## Installation and setup
 
