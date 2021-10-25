@@ -21,15 +21,19 @@ function TrackCreationForm() {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    const newPost = {
-      user: user.result._id,
-      trackName,
-      startDate,
-      estimatedCompletionDate,
-      description,
-    };
-    const response = await axios.post(`api/track`, newPost, config);
-    // console.log(response);
+    try {
+      const newPost = {
+        user: user.result._id,
+        trackName,
+        startDate,
+        estimatedCompletionDate,
+        description,
+      };
+      await axios.post(`api/track`, newPost, config);
+      window.location.replace(`/`);
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <>
