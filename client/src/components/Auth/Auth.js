@@ -87,14 +87,14 @@ const SignUp = () => {
               <>
                 <Input
                   name="firstName"
-                  label="First Name"
+                  placeholder="First Name"
                   handleChange={handleChange}
                   autoFocus
                   half
                 />
                 <Input
                   name="lastName"
-                  label="Last Name"
+                  placeholder="Last Name"
                   handleChange={handleChange}
                   half
                 />
@@ -102,13 +102,13 @@ const SignUp = () => {
             )}
             <Input
               name="email"
-              label="Email Address"
+              placeholder="Email Address"
               handleChange={handleChange}
               type="email"
             />
             <Input
               name="password"
-              label="Password"
+              placeholder="Password"
               handleChange={handleChange}
               type={showPassword ? "text" : "password"}
               handleShowPassword={handleShowPassword}
@@ -116,7 +116,7 @@ const SignUp = () => {
             {isSignup && (
               <Input
                 name="confirmPassword"
-                label="Repeat Password"
+                placeholder="Repeat Password"
                 handleChange={handleChange}
                 type="password"
               />
