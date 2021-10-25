@@ -368,15 +368,8 @@ const Track = ({ location }) => {
               </Typography> */}
               {/* {console.log(trackInfo.trackName)} */}
               <Typography variant="body1">
-                Created {moment(trackInfo.createdAt).fromNow()}{" "}
-                {trackInfo.creator && (
-                  <Link
-                    to={`/creators/${trackInfo.creator}`}
-                    style={{ textDecoration: "none", color: "#3f51b5" }}
-                  >
-                    by {` ${trackInfo.creator}`}
-                  </Link>
-                )}
+                Created {moment(trackInfo.createdAt).fromNow()}
+                {trackInfo.creator && " by " + trackInfo.creator}
               </Typography>
               <Divider style={{ margin: "20px 0" }} />
               <Divider style={{ margin: "20px 0" }} />

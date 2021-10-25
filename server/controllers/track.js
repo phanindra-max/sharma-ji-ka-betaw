@@ -91,3 +91,15 @@ export const getTrackById = async (req, res) => {
     throw new Error("No Tracks Found!");
   }
 };
+
+export const getTracksByCreator = async (req, res) => {
+  const { creator } = req.query;
+
+  try {
+    const posts = await Track.find({ creator });
+
+    res.json({ data: posts });
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+};

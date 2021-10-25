@@ -23,7 +23,7 @@ const App = () => {
           <Route path="/posts/search" exact component={Home} />
           <Route path="/track/:id" exact component={Track} />
           <Route
-            path={["/creators/:name", "/tags/:name"]}
+            path={["/creators/:name/:id", "/tags/:name"]}
             component={CreatorOrTag}
           />
           <Route

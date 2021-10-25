@@ -127,7 +127,7 @@ button.btn_isCompleted {
   transition: all 150ms ease-in-out;
 }
 .btn_isCompleted::after {
-  content: "is completed?";
+  content: "Mark as completed";
   transition: all 150ms ease-in-out;
 }
 .btn_color_changer {

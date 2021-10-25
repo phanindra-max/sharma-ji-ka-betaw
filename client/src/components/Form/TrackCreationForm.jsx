@@ -100,7 +100,7 @@ function TrackCreationForm() {
             ></textarea>
           </div>
 
-          <div className="mb-3">
+          {/* <div className="mb-3">
             <label htmlFor="isPublic" className="form-label">
               Public Visibility
             </label>
@@ -115,7 +115,7 @@ function TrackCreationForm() {
               <option value="true">Hell yeah, make it public</option>
               <option value="false">Private please!</option>
             </select>
-          </div>
+          </div> */}
           <button type="submit" className="btn btn-primary">
             Submit
           </button>
