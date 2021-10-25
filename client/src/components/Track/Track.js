@@ -29,7 +29,7 @@ const Track = ({ location }) => {
   const [subtopic3, setSubtopic3] = useState("");
   const [subtopic4, setSubtopic4] = useState("");
   const [trackInfo, setTrackInfo] = useState({});
-  const [topicInfo, setTopicInfo] = useState({});
+  const [topicInfo, setTopicInfo] = useState([]);
 
   const id = location.pathname.split("/")[2];
 
@@ -39,9 +39,9 @@ const Track = ({ location }) => {
 
   const dataFetch = async () => {
     const res = await axios.get(`/api/track/${id}`);
-    console.log(res.data);
-    setTrackInfo(res.data.trackDetails);
-    // setTopicInfo(res.data.topics);
+    // console.log(res.data);
+    await setTrackInfo(res.data.trackDetails);
+    await setTopicInfo(res.data.topics);
   };
 
   const func = () => {
@@ -52,7 +52,7 @@ const Track = ({ location }) => {
     <>
       {trackInfo ? "" : dataFetch}
       {topicInfo ? "" : dataFetch}
-      {console.log(trackInfo)}
+      {/* {console.log("Topic infow" + JSON.stringify(topicInfo))} */}
       <Paper style={{ padding: "20px", borderRadius: "15px" }} elevation={6}>
         <div
           class="modal fade"
@@ -202,20 +202,28 @@ const Track = ({ location }) => {
                   <div className="circle"></div>
                   <div className="outer_border">
                     <div className="title border">
-                      {e.name}
+                      {topicInfo[0].name}
                       <img className="pencil" src={PencilImg} />
                     </div>
                     <div className="sub_topics border">
-                      <div className="sub_topic">{e.subtopics[0]}</div>
-                      <div className="sub_topic">{e.subtopics[1]}</div>
-                      <div className="sub_topic">{e.subtopics[2]}</div>
-                      <div className="sub_topic">{e.subtopics[3]}</div>
+                      <div className="sub_topic">
+                        {topicInfo[0].subtopics[0]}
+                      </div>
+                      <div className="sub_topic">
+                        {topicInfo[0].subtopics[1]}
+                      </div>
+                      <div className="sub_topic">
+                        {topicInfo[0].subtopics[2]}
+                      </div>
+                      <div className="sub_topic">
+                        {topicInfo[0].subtopics[3]}
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             ))}
-            ;{/* repeat this */}
+            {/* repeat this */}
             {/* repeat closes here */}
           </div>
         </div>
