@@ -4,7 +4,7 @@
 
 # Hello there!
 
-Hi! Thanks for checking in. This repo hosts source code of and online organizer and learning paths sharing platform. Hosted at : `[Website](https://sharma-ji-ka-beta.herokuapp.com/)`
+Hi! Thanks for checking in. This repo hosts source code of and online organizer and learning paths sharing platform. Hosted at : [Website](https://sharma-ji-ka-beta.herokuapp.com/)
 
 # Introduction
 
@@ -12,7 +12,9 @@ Sharma-Ji-Ka-Betaw is a Hindi metaphor for citing obidient kid. In the age of in
 
 ## Installation and setup
 
-Feel free to download the code on your machine and play with it. You can do that by cloning this repo using `git clone https://github.com/phanindra-max/sharma-ji-ka-betaw.git` command in your terminal.
+Feel free to download the code on your machine and play with it. You can do that by cloning this repo using 
+`git clone https://github.com/phanindra-max/sharma-ji-ka-betaw.git`
+command in your terminal.
 
 - after that, open the directory where you cloned the repo.
 - Now you need to create a .env file in the root directory of the project with the following details:
