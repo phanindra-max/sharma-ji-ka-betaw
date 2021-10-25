@@ -15,11 +15,23 @@ Sharma-Ji-Ka-Betaw is a Hindi metaphor for citing obidient kid. In the age of in
 
 The website mainly focuses on bringing the openness where anyone can join and create a learning track
 
-- User must have to signed in to create any tracks of his own
+- User must have to signed in to create any tracks of his own(don't worry we can't afford to steal your data XD)
+
+![Yay, we got google sign in too!!](https://user-images.githubusercontent.com/51989959/138710992-1e398adb-0021-431f-bac2-efae0999a21b.png)
+
 - After signing in, user can create a track using the plus button at the bottom right corner of the screen.
+
+![image](https://user-images.githubusercontent.com/51989959/138711356-c4484fe3-98f1-4f55-bcea-5a27bd7287eb.png)
+
 - Then user can navigate to his own track and strat adding the topics/subtopics in order to organize how he/she wants to achieve his goal
+
+![image](https://user-images.githubusercontent.com/51989959/138711464-76f095f3-e4c0-4b11-abf3-31543dd2fac0.png)
+
 - After completing a track you can mark it as completed just a small visual token of achieving something, you'll see the cards turning party mode(green color, lol) 
 
+![Before Completion](https://user-images.githubusercontent.com/51989959/138711633-6c533317-1d51-4862-9891-ed2e381c9175.png)
+
+![After Completion](https://user-images.githubusercontent.com/51989959/138711568-cc991a62-2be3-47cd-8fc5-7a55fb5dd06a.png)
 
 ## Installation and setup
 
