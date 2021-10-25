@@ -47,7 +47,9 @@ const Navbar = () => {
             {/* <img className="Title_img" src={NavImg} alt="" /> */}
           </Link>
         </h2>
-      <p className="hava">Organize and Achieve goals as superMan</p>
+        <p className="hava">
+          Organize and Achieve goals like a SuperMan( ͡° ͜ʖ ͡°)
+        </p>
       </div>
       <Link to="/" className={classes.brandContainer}>
         {/* <img
