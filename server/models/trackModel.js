@@ -1,4 +1,4 @@
-import mongoose from "mongoose"
+import mongoose from "mongoose";
 
 const trackSchema = mongoose.Schema(
   {
@@ -7,6 +7,7 @@ const trackSchema = mongoose.Schema(
       required: true,
       ref: "User",
     },
+    creator: String,
     trackName: {
       type: String,
       required: true,
@@ -23,10 +24,20 @@ const trackSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+    isPublic: {
+      type: String,
+      required: true,
+      default: false,
+    },
+    isCompleted: {
+      type: Boolean,
+      required: true,
+      default: false,
+    },
   },
   {
     timestamps: true,
   }
-)
+);
 
-export default mongoose.model("Track", trackSchema)
+export default mongoose.model("Track", trackSchema);

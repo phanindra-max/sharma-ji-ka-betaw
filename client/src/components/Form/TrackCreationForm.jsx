@@ -5,6 +5,7 @@ import { useState } from "react";
 // import { createNewTask } from "../../actions/tasks";
 function TrackCreationForm() {
   const [trackName, setTrackName] = useState("");
+  const [isPublic, setIsPublic] = useState("");
   const [startDate, setStartDate] = useState("");
   const [estimatedCompletionDate, setEstimatedCompletionDate] = useState("");
   const [description, setDescription] = useState("");
@@ -22,14 +23,17 @@ function TrackCreationForm() {
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
-      const newPost = {
+      const newTrack = {
         user: user.result._id,
+        creator: user.result.name,
         trackName,
         startDate,
         estimatedCompletionDate,
         description,
+        isPublic,
       };
-      await axios.post(`api/track`, newPost, config);
+      console.log(config);
+      await axios.post(`api/track`, newTrack, config);
       window.location.replace(`/`);
     } catch (error) {
       console.log(error);
@@ -96,6 +100,22 @@ function TrackCreationForm() {
             ></textarea>
           </div>
 
+          <div className="mb-3">
+            <label htmlFor="isPublic" className="form-label">
+              Public Visibility
+            </label>
+            <select
+              id="isPublic"
+              className="form-select"
+              value={isPublic || ""}
+              onChange={(e) => setIsPublic(e.target.value)}
+              required
+            >
+              <option value="">Set Privacy...</option>
+              <option value="true">Hell yeah, make it public</option>
+              <option value="false">Private please!</option>
+            </select>
+          </div>
           <button type="submit" className="btn btn-primary">
             Submit
           </button>

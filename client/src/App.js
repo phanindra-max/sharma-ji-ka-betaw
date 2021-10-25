@@ -9,6 +9,7 @@ import CreatorOrTag from "./components/CreatorOrTag/CreatorOrTag";
 import TrackCreationForm from "./components/Form/TrackCreationForm";
 import TrackCards from "./components/Home/TrackCards";
 import Track from "./components/Track/Track";
+import UpdateTrackForm from "./components/Track/updateTrackForm";
 const App = () => {
   const user = JSON.parse(localStorage.getItem("profile"));
 
@@ -31,6 +32,11 @@ const App = () => {
             component={() => (!user ? <Auth /> : <Redirect to="/posts" />)}
           />
           <Route path="/form" exact component={TrackCreationForm} />
+          <Route
+            path="/updatetrackform/:id"
+            exact
+            component={UpdateTrackForm}
+          />
           {/* <Route path="/ccpp" exact component={TrackCards} /> */}
         </Switch>
       </Container>
