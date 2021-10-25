@@ -12,7 +12,7 @@ Sharma-Ji-Ka-Betaw is a Hindi metaphor for citing obidient kid. In the age of in
 
 ## Installation and setup
 
-Feel free to download the code on your machine and play with it. You can do that by cloning this repo using\
+Feel free to download the code on your machine and play with it. You can do that by cloning this repo using
 
 `git clone https://github.com/phanindra-max/sharma-ji-ka-betaw.git`
 
